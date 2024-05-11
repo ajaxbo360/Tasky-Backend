@@ -28,6 +28,7 @@ class TaskResource extends JsonResource
                 'id' => $this->user->id,
                 'user name' => $this->user->name,
                 'user email' => $this->user->email
+
             ],
 
 

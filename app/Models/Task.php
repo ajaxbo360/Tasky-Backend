@@ -16,6 +16,9 @@ class Task extends Model
         'description',
         'status'
     ];
+    // all of the relationships to be touched
+
+    protected $touches = ['user'];
 
     public function user()
     {

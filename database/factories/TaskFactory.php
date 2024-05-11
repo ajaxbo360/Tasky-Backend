@@ -21,10 +21,11 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $statuses = [TaskStatusEnum::New, TaskStatusEnum::InProgress, TaskStatusEnum::Completed];
         return [
             'name' => $this->faker->name(),
             'description' => $this->faker->sentence(),
-            'status' => TaskStatusEnum::New,
+            'status' => $this->faker->randomElement($statuses),
             'due_date' => $this->faker->dateTimeBetween('now', '+30 days'),
             'user_id' => User::all()->random()->id,
 
